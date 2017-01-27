@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var indice = require('../controllers/message');
 var Message = require('../models/message');
 
 
@@ -16,6 +17,8 @@ router.get('/messages', function (req, res, next) {
         });
     });
 });
+
+// router.get('/messages', indice.getIndice);
 
 //enviar
 router.post('/messages', function (req, res, next) {
