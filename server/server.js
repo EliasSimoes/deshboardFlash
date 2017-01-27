@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.static(path.join(__dirname, '../dist')));
 console.log(path.join(__dirname,'/public' ));
 // Set our api routes
-app.use('/messages', appRoute);
+app.use('/', appRoute);
 
 
 
@@ -50,9 +50,9 @@ app.set('port', port);
 
 // Catch all other routes and return the index file
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../dist/index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 /**
  * Create HTTP server.
  */
