@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const load = require('express-load');
 const mongoose = require('mongoose');
 const config = require('./config/config');
+const hbs = require('handlebars');
 
 var appRoute = require('./routes/message');
 
@@ -28,9 +29,10 @@ app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.static(path.join(__dirname, '../dist')));
 console.log(path.join(__dirname,'/public' ));
 console.log(path.join(__dirname,'../dist' ));
+
+
 // Set our api routes
 app.use('/', appRoute);
-
 
 
 app.use(function (req, res, next) {
