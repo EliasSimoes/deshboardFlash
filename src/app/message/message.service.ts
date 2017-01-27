@@ -27,6 +27,7 @@ export class MessageService{
                 this.messages.push(message);
 
                 return message
+                console.log(environment.api + environment.messageService);
             })
     }
 
@@ -56,3 +57,4 @@ export class MessageService{
 
     }
 }
+
