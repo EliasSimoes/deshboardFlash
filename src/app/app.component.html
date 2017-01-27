@@ -120,35 +120,28 @@
 
           <label for="nome">Nome</label>
         </div>
-      </div>
-      <div class="row">
+
 
         <div class="input-field">
-          <input name="nome2"
-                 id="nome2"
+
+          <input name="comentario"
+                 id="comentario"
                  type="text"
                  class=""
-                 required minlength="3" maxlength="20"
+                 required
                  ngModel
           />
+          <label for="comentario">Sugestão</label>
 
-
-
-          <label for="nome2">Nome</label>
         </div>
 
 
         <div class="input-field">
-          <textarea name="comentario"
-                 id="comentario" class=""
-                 required
-                 ngModel
-
-          ></textarea>
-          <label for="comentario" >Comentário</label>
+          <input name="cc1" type="hidden" id="cc1" class="">
+          <!--<label for="cc1" >Comentário</label>-->
         </div>
       </div>
-      <button type="submit" class="btn btn-primary"> Enviar mensagem </button>
+      <button type="submit" class="btn btn-primary"> Enviar sugestão </button>
 
     </form>
 
