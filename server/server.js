@@ -36,7 +36,7 @@ app.use('/', appRoute);
 
 
 app.set('view engine', 'html')
-app.set('dist', __dirname + '/dist')
+app.set('dist', __dirname + '../dist')
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');

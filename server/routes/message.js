@@ -3,7 +3,7 @@ var router = express.Router();
 var Message = require('../models/message');
 
 
-router.get('/', function(req, res){
+router.get('*', function(req, res){
     res.render('index');
 });
 
