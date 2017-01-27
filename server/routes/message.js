@@ -3,10 +3,6 @@ var router = express.Router();
 var Message = require('../models/message');
 
 
-router.get('/', function(req, res){
-    res.render('index');
-});
-
 // trazer do banco
 router.get('/messages', function (req, res, next) {
     Message.find(function (err, messages) {
