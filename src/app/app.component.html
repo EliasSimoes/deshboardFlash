@@ -120,13 +120,24 @@
 
           <label for="nome">Nome</label>
         </div>
-
-        <!--<div class="input-field col s6">-->
-        <!--<input id="email" type="email" class="validate">-->
-        <!--<label for="email" data-error="Email inválido" data-success="Certo">Email</label>-->
-        <!--</div>-->
       </div>
       <div class="row">
+
+        <div class="input-field">
+          <input name="nome2"
+                 id="nome2"
+                 type="text"
+                 class=""
+                 required minlength="3" maxlength="20"
+                 ngModel
+          />
+
+
+
+          <label for="nome2">Nome</label>
+        </div>
+
+
         <div class="input-field">
           <textarea name="comentario"
                  id="comentario" class=""
