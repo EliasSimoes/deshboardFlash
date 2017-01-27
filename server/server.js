@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.static(path.join(__dirname, '../dist')));
 console.log(path.join(__dirname,'/public' ));
 // Set our api routes
-app.use('/', appRoute);
+app.use('/messages', appRoute);
 
 
 
