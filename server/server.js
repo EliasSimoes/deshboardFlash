@@ -35,8 +35,8 @@ console.log(path.join(__dirname,'../dist' ));
 app.use('/', appRoute);
 
 
-app.set('view engine', 'hbs')
-app.set('dist', __dirname + '../dist')
+app.set('view engine', 'hbs');
+app.set('dist', __dirname + '../dist');
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -56,9 +56,9 @@ app.set('port', port);
 
 // Catch all other routes and return the index file
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../dist/index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 /**
  * Create HTTP server.
  */
