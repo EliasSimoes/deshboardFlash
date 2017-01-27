@@ -35,7 +35,7 @@ console.log(path.join(__dirname,'../dist' ));
 app.use('/', appRoute);
 
 
-app.set('view engine', 'html')
+app.set('view engine', 'hbs')
 app.set('dist', __dirname + '../dist')
 
 app.use(function (req, res, next) {
