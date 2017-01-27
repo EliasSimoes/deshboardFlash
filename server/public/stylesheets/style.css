@@ -188,3 +188,10 @@ color: #ffffff !important;
   margin-left: 1em;
 
 }
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-bottom: 1px solid #feab11;
+  box-shadow: 0 1px 0 0 #feab11;
+}
