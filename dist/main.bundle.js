@@ -242,7 +242,8 @@ var MessageService = (function () {
     };
     MessageService.prototype.getMessages = function () {
         var _this = this;
-        return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api + __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].messageService)
             .map(function (response) {
             var messages = response.json().data;
             var transformedMessages = [];
@@ -259,8 +260,8 @@ var MessageService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({
             'Content-Type': 'application/json'
         });
-        return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, { headers: headers });
-        //return this.http.post(environment.api + environment.messageService, body, {headers: headers});
+        //return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api + __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].messageService, body, { headers: headers });
     };
     MessageService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Injectable */])(), 

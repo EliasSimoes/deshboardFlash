@@ -31,8 +31,8 @@ export class MessageService{
     }
 
     getMessages(){
-        return this.http.get('https://flash-deshboard.herokuapp.com/messages')
-        //return this.http.get(environment.api + environment.messageService)
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get(environment.api + environment.messageService)
             .map((response:Response) => {
 
                 const messages = response.json().data;
@@ -53,8 +53,8 @@ export class MessageService{
         const headers = new Headers({
             'Content-Type': 'application/json'
         });
-        return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
-        //return this.http.post(environment.api + environment.messageService, body, {headers: headers});
+        //return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
+        return this.http.post(environment.api + environment.messageService, body, {headers: headers});
 
     }
 }
