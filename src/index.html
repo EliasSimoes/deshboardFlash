@@ -9,16 +9,18 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
     <link rel='stylesheet' href='stylesheets/style.css'/>
     <link rel='stylesheet' href='stylesheets/animate.css'/>
 </head>
 <body>
 
-<div class="navbar-fixed wow fadeInDown">
-    <nav class="grey lighten-3">
-        <div class="nav-wrapper">
+<div class="navbar-fixed">
+    <nav class="grey lighten-3 ">
+        <div class="nav-wrapper z-indexNav">
             <a href="#" class="brand-logo"><img class="responsive-img z-depth-4" src="img/logo-quadrado.png" alt=""></a>
+            <a href="#" data-activates="mobile-desh" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li class="hoverable"><a href="/#1">Principal</a></li>
                 <li class="hoverable"><a href="/#2">Dashboard 1</a></li>
@@ -31,11 +33,29 @@
     </nav>
 </div>
 
+    <ul id="mobile-desh" class="side-nav z-indexMob">
+        <li class="hoverable"><a href="/#1">Principal</a></li>
+        <li class="hoverable"><a href="/#2">Dashboard 1</a></li>
+        <li class="hoverable"><a href="/#3">Dashboard 2</a></li>
+        <li class="hoverable"><a href="/#4">Dashboard 3</a></li>
+        <li class="hoverable"><a href="/#5">Alguma sugestão?</a></li>
+        <li class="hoverable"><a href="/#6">Sugestões</a></li>
+    </ul>
 
   <app-root>Loading...</app-root>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+        $('.collapsible').collapsible();
+        $(".button-collapse").sideNav();
+
+        new WOW().init();
+    });
+</script>
 </body>
 </html>

@@ -201,3 +201,11 @@ input[type=text]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #feab11;
 }
+
+.z-indexNav{
+  z-index: 9;
+}
+
+.z-indexMob{
+  z-index: 99999999999999999;
+}
