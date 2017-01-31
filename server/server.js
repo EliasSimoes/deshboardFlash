@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const load = require('express-load');
 const mongoose = require('mongoose');
 const config = require('./config/config');
-const hbs = require('handlebars');
 
 var appRoute = require('./routes/message');
 
