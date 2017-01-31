@@ -30,3 +30,18 @@
          });
      });
  };
+
+ exports.getIndice = function (re, res, next) {
+
+     Message.count({"gostei":"Gostei"},function(err, count){
+         if (err){
+             return res.status(500).json({
+                 message: 'Erro ao trazer o dado do banco!!!'
+             });
+         }
+         res.status(200).json({
+             data: count
+         });
+     });
+
+ };

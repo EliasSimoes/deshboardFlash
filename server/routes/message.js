@@ -40,6 +40,7 @@ var messageCtrl = require('../controllers/message');
 // });
 
  router.get('/messages', messageCtrl.getComents);
+ router.get('/messages', messageCtrl.getIndice);
 router.post('/messages', messageCtrl.postComents);
 
 
