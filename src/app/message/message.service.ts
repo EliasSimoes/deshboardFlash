@@ -3,13 +3,16 @@ import {Http, Headers, Response} from "@angular/http";
 import { Message } from './message.model';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
-import {environment} from "../../environments/environment";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 
 export class MessageService{
 
     private messages: Message[] = [];
+    private indice:           string;
+    private indiceGostei:     string;
+    private indiceNGostei:    string;
 
     messageIsEdit = new EventEmitter<Message>();
 
@@ -30,6 +33,43 @@ export class MessageService{
             })
     }
 
+    //relação das sugestoes
+    getIndice(){
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
+        return this.http.get('http://localhost:3000/messages/indice')
+        //return this.http.get(environment.api + environment.messageService + environment.indice)
+            .map((response:Response) => {
+
+            const indice = response.json().data;
+                return indice;
+            })
+    }
+
+    getGostei(){
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get('http://localhost:3000/messages/indice1')
+        //return this.http.get(environment.api + environment.messageService + environment.indice1)
+            .map((response:Response) => {
+
+                const indiceGostei = response.json().data;
+                return indiceGostei;
+            })
+    }
+
+    getNGostei(){
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get('http://localhost:3000/messages/indice2')
+        //return this.http.get(environment.api + environment.messageService + environment.indice2)
+            .map((response:Response) => {
+
+                const indiceNGostei = response.json().data;
+                return indiceNGostei;
+            })
+    }
+
+
+
+    //métodos do form principal
     getMessages(){
         //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
         return this.http.get(environment.api + environment.messageService)

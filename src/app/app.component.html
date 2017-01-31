@@ -145,15 +145,12 @@
 
     </form>
 
+  </div>
 
-
-
-
-
-    <!--<div class="col s6">-->
-    <!--<h1>Obrigado por fazer parte de nossa evolução</h1>-->
-    <!--<a href="#" class="brand-logo"><img class="responsive-img z-depth-4" src="img/logo-quadrado.png" alt=""></a>-->
-    <!--</div>-->
+  <div class="col s6">
+    <p> Total de sugestões: {{ indice }}</p>
+    <p> Gostaram: {{ indiceGostei }}</p>
+    <p> Não gostaram: {{ indiceNGostei }}</p>
   </div>
 </section>
 
@@ -163,7 +160,7 @@
     <h1 class="center-align">Obrigado por fazer parte da nossa evolução.</h1>
 
     <div class="col s12 m8 offset-m2 l6 offset-l3 wow fadeIn ">
-      <div class="card-panel grey lighten-5 z-depth-1 hoverable wow flipInX" *ngFor="let message of messages">
+      <div class="card-panel grey lighten-5 z-depth-1 hoverable wow fadeIn hoverable wow flipInX" *ngFor="let message of messages">
         <div class="row valign-wrapper cent-coment ">
           <div class="col s2 ">
             <img src="img/man-talking.png" alt="" class="responsive-img">

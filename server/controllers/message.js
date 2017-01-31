@@ -31,9 +31,37 @@
      });
  };
 
- exports.getIndice = function (re, res, next) {
 
-     Message.count({"gostei":"Gostei"},function(err, count){
+ exports.getIndice = function (re, res, next) {
+     Message.find().count( function(err, indice){
+         if (err){
+             return res.status(500).json({
+                 message: 'Erro ao trazer o dado do banco!!!'
+             });
+         }
+         res.status(200).json({
+             data: indice
+         });
+     });
+
+ };
+
+ exports.getIndiceGostei = function (re, res, next) {
+     Message.find({'gostei':'Gostei'}).count(function(err, count){
+         if (err){
+             return res.status(500).json({
+                 message: 'Erro ao trazer o dado do banco!!!'
+             });
+         }
+         res.status(200).json({
+             data: count
+         });
+     });
+
+ };
+
+ exports.getIndiceNGostei = function (re, res, next) {
+     Message.find({'gostei':'Não gostei'}).count(function(err, count){
          if (err){
              return res.status(500).json({
                  message: 'Erro ao trazer o dado do banco!!!'

@@ -15,7 +15,9 @@ export class AppComponent implements OnInit{
 
 
   messages: Message[] = [];
-
+  indice: string;
+  indiceGostei: string;
+  indiceNGostei: string;
   gostei: string;
   userName: string;
   comentario: string;
@@ -34,12 +36,28 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
+    this.messageService.getIndice()
+        .subscribe(
+            data => this.indice = data,
+            error => console.log(error)
+        )
+    this.messageService.getGostei()
+        .subscribe(
+            data => this.indiceGostei = data,
+            error => console.log(error)
+        )
+    this.messageService.getNGostei()
+        .subscribe(
+            data => this.indiceNGostei = data,
+            error => console.log(error)
+        )
     this.messageService.getMessages()
         .subscribe(
             messages => this.messages = messages,
             error => console.error(error)
         )
   }
+
 
   addComentario(form: NgForm){
 
@@ -62,23 +80,9 @@ export class AppComponent implements OnInit{
     form.reset();
   }
 
-  onSubmit(form: NgForm){
+  onSubmit(form: NgForm) {
 
 
-
-    if (form.value.inputGostei == "true"){
-      this.gostei = "Gostei";
-    } else {
-      this.gostei = "Não gostei";
-    }
-
-    this.userName = form.value.nome;
-    this.comentario = form.value.comentario;
-
-        alert(this.gostei + ' ' + this.userName + ' ' + this.comentario);
-
-    form.reset();
   }
-
 
 }

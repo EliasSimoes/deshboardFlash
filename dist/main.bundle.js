@@ -30,6 +30,9 @@ var environment = {
     production: true,
     api: 'http://localhost:3000',
     messageService: '/messages',
+    indice: '/indice',
+    indice1: '/indice1',
+    indice2: '/indice2'
 };
 //# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/environment.js.map
 
@@ -103,6 +106,12 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.messageService.getIndice()
+            .subscribe(function (data) { return _this.indice = data; }, function (error) { return console.log(error); });
+        this.messageService.getGostei()
+            .subscribe(function (data) { return _this.indiceGostei = data; }, function (error) { return console.log(error); });
+        this.messageService.getNGostei()
+            .subscribe(function (data) { return _this.indiceNGostei = data; }, function (error) { return console.log(error); });
         this.messageService.getMessages()
             .subscribe(function (messages) { return _this.messages = messages; }, function (error) { return console.error(error); });
     };
@@ -123,16 +132,6 @@ var AppComponent = (function () {
         form.reset();
     };
     AppComponent.prototype.onSubmit = function (form) {
-        if (form.value.inputGostei == "true") {
-            this.gostei = "Gostei";
-        }
-        else {
-            this.gostei = "Não gostei";
-        }
-        this.userName = form.value.nome;
-        this.comentario = form.value.comentario;
-        alert(this.gostei + ' ' + this.userName + ' ' + this.comentario);
-        form.reset();
     };
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Component */])({
@@ -240,6 +239,32 @@ var MessageService = (function () {
             return message;
         });
     };
+    //relação das sugestoes
+    MessageService.prototype.getIndice = function () {
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
+        return this.http.get('http://localhost:3000/messages/indice')
+            .map(function (response) {
+            var indice = response.json().data;
+            return indice;
+        });
+    };
+    MessageService.prototype.getGostei = function () {
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get('http://localhost:3000/messages/indice1')
+            .map(function (response) {
+            var indiceGostei = response.json().data;
+            return indiceGostei;
+        });
+    };
+    MessageService.prototype.getNGostei = function () {
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get('http://localhost:3000/messages/indice2')
+            .map(function (response) {
+            var indiceNGostei = response.json().data;
+            return indiceNGostei;
+        });
+    };
+    //métodos do form principal
     MessageService.prototype.getMessages = function () {
         var _this = this;
         //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
@@ -333,7 +358,7 @@ var MessageService = (function () {
 /***/ 665:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"intro\" id=\"1\">\n  <div class=\"content\">\n    <h1>A flash é você quem faz!</h1>\n    <p>\n      Você já definiu a nossa nova imagem quando nos ajudou a escolher a nova logo.\n      Agora é hora de você desenhar os dashboards principais do nosso BI - as informações que você verá diariamente da nossa operação</p>\n  </div>\n</section>\n\n<section id=\"2\" >\n  <div class=\"content\">\n    <h1>Dashboard exemplo 1</h1>\n    <img class=\"responsive-img wow fadeIn\" src=\"img/dash/1.png\">\n  </div>\n\n\n</section>\n\n<section id=\"3\">\n  <div class=\"content\">\n    <h1>Dashboard exemplo 2</h1>\n    <img class=\"responsive-img wow fadeIn\" src=\"img/dash/2.png\">\n  </div>\n</section>\n\n<section id=\"4\" class=\"z-depth-2\">\n  <div class=\"content\">\n    <h1>Dashboard exemplo 3</h1>\n    <img class=\"responsive-img wow fadeIn\" src=\"img/dash/3.png\">\n  </div>\n</section>\n\n\n<section id=\"5\">\n\n  <!--<a class=\"waves-effect waves-light btn centraliza-relativo hoverable\" href=\"#modal1\">Alguma sugestão?</a>-->\n\n  <!--<div id=\"modal1\" class=\"modal  modal-fixed-footer\">-->\n  <!--<div class=\"modal-content\">-->\n\n  <!--<div class=\"row s6 wow fadeIn\" id=\"centraliza-relativo\">-->\n  <!--<form class=\"\" id=\"form-dash\" (ngSubmit)=\"onAddMessage()\">-->\n  <!--<p>O que achou dos nossos novos dashboards?</p>-->\n  <!--<p>-->\n  <!--<input name=\"group1\" type=\"radio\" id=\"gostei\"/>-->\n  <!--<label for=\"gostei\">Gostei.</label>-->\n\n  <!--<input name=\"group1\" type=\"radio\" id=\"nao-gostei\"/>-->\n  <!--<label for=\"nao-gostei\">Não gostei.</label>-->\n  <!--</p>-->\n\n  <!--<div class=\"row\">-->\n  <!--<div class=\"input-field\">-->\n  <!--<input name=\"nome\" id=\"nome\" type=\"text\" class=\"validate\" name=\"nome\" required>-->\n  <!--<label for=\"nome\">Nome</label>-->\n  <!--</div>-->\n\n  <!--&lt;!&ndash;<div class=\"input-field col s6\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<input id=\"email\" type=\"email\" class=\"validate\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<label for=\"email\" data-error=\"Email inválido\" data-success=\"Certo\">Email</label>&ndash;&gt;-->\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  <!--</div>-->\n  <!--<div class=\"row\">-->\n  <!--<div class=\"input-field\">-->\n  <!--<input name=\"comentario\" id=\"comentario\" class=\"materialize-textarea\" name=\"comentario\" required>-->\n\n  <!--<label for=\"comentario\" >Comentário</label>-->\n  <!--</div>-->\n  <!--</div>-->\n\n\n  <!--</form>-->\n  <!--&lt;!&ndash;<div class=\"col s6\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<h1>Obrigado por fazer parte de nossa evolução</h1>&ndash;&gt;-->\n  <!--&lt;!&ndash;<a href=\"#\" class=\"brand-logo\"><img class=\"responsive-img z-depth-4\" src=\"img/logo-quadrado.png\" alt=\"\"></a>&ndash;&gt;-->\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  <!--</div>-->\n\n  <!--</div>-->\n  <!--<div class=\"modal-footer\">-->\n\n  <!--<button type=\"submit\" class=\"btn btn-primary modal-action modal-close\"> Enviar mensagem </button>-->\n\n  <!--</div>-->\n  <!--</div>-->\n\n  <div class=\"row s6 wow fadeIn centraliza-relativo\">\n\n\n\n\n\n    <form class=\"\"  id=\"form-dash\" #myForm=\"ngForm\" (ngSubmit)=\"addComentario(myForm)\">\n      <p>O que achou dos nossos novos dashboards?</p>\n      <div class=\"row\">\n        <input name=\"inputGostei\" checked type=\"radio\" id=\"gostei\"\n               ngModel\n               value=\"true\"\n        />\n        <label for=\"gostei\">Gostei.</label>\n\n        <input name=\"inputGostei\" type=\"radio\" id=\"nao-gostei\"\n               ngModel\n               value=\"false\"\n        />\n        <label for=\"nao-gostei\">Não gostei.</label>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"input-field\">\n          <input name=\"nome\"\n                 id=\"nome\"\n                 type=\"text\"\n                 class=\"\"\n                 required minlength=\"3\" maxlength=\"20\"\n                 ngModel\n          />\n\n\n\n          <label for=\"nome\">Nome</label>\n        </div>\n\n\n        <div class=\"input-field\">\n\n          <input name=\"comentario\"\n                 id=\"comentario\"\n                 type=\"text\"\n                 class=\"\"\n                 required\n                 ngModel\n          />\n          <label for=\"comentario\">Sugestão</label>\n\n        </div>\n\n\n        <div class=\"input-field\">\n          <input name=\"cc1\" type=\"hidden\" id=\"cc1\" class=\"\">\n          <!--<label for=\"cc1\" >Comentário</label>-->\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\"> Enviar sugestão </button>\n\n    </form>\n\n\n\n\n\n\n    <!--<div class=\"col s6\">-->\n    <!--<h1>Obrigado por fazer parte de nossa evolução</h1>-->\n    <!--<a href=\"#\" class=\"brand-logo\"><img class=\"responsive-img z-depth-4\" src=\"img/logo-quadrado.png\" alt=\"\"></a>-->\n    <!--</div>-->\n  </div>\n</section>\n\n\n<section id=\"6\">\n  <div class=\"row\">\n    <h1 class=\"center-align\">Obrigado por fazer parte da nossa evolução.</h1>\n\n    <div class=\"col s12 m8 offset-m2 l6 offset-l3 wow fadeIn \">\n      <div class=\"card-panel grey lighten-5 z-depth-1 hoverable wow flipInX\" *ngFor=\"let message of messages\">\n        <div class=\"row valign-wrapper cent-coment \">\n          <div class=\"col s2 \">\n            <img src=\"img/man-talking.png\" alt=\"\" class=\"responsive-img\">\n            <p class=\"flow-text\">{{message.gostei}}</p>\n          </div>\n          <div class=\"col s10\">\n                      <span class=\"black-text\">\n                          <h6 class=\"blue-text text-darken-2\">{{message.userName}}</h6>\n\n                          <p class=\"blue-text text-darken-2\">{{ message.comentario }}</p>\n                        <!--<a (click)=\"onDelete()\">Delete</a>-->\n                      </span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<footer id=\"rodape\">\n  Desenvolvido por <a href=\"http://www.flashcourier.com.br\">Flash Courier 2017</a>\n</footer>\n\n\n\n"
+module.exports = "<section class=\"intro\" id=\"1\">\n  <div class=\"content\">\n    <h1>A flash é você quem faz!</h1>\n    <p>\n      Você já definiu a nossa nova imagem quando nos ajudou a escolher a nova logo.\n      Agora é hora de você desenhar os dashboards principais do nosso BI - as informações que você verá diariamente da nossa operação</p>\n  </div>\n</section>\n\n<section id=\"2\" >\n  <div class=\"content\">\n    <h1>Dashboard exemplo 1</h1>\n    <img class=\"responsive-img wow fadeIn\" src=\"img/dash/1.png\">\n  </div>\n\n\n</section>\n\n<section id=\"3\">\n  <div class=\"content\">\n    <h1>Dashboard exemplo 2</h1>\n    <img class=\"responsive-img wow fadeIn\" src=\"img/dash/2.png\">\n  </div>\n</section>\n\n<section id=\"4\" class=\"z-depth-2\">\n  <div class=\"content\">\n    <h1>Dashboard exemplo 3</h1>\n    <img class=\"responsive-img wow fadeIn\" src=\"img/dash/3.png\">\n  </div>\n</section>\n\n\n<section id=\"5\">\n\n  <!--<a class=\"waves-effect waves-light btn centraliza-relativo hoverable\" href=\"#modal1\">Alguma sugestão?</a>-->\n\n  <!--<div id=\"modal1\" class=\"modal  modal-fixed-footer\">-->\n  <!--<div class=\"modal-content\">-->\n\n  <!--<div class=\"row s6 wow fadeIn\" id=\"centraliza-relativo\">-->\n  <!--<form class=\"\" id=\"form-dash\" (ngSubmit)=\"onAddMessage()\">-->\n  <!--<p>O que achou dos nossos novos dashboards?</p>-->\n  <!--<p>-->\n  <!--<input name=\"group1\" type=\"radio\" id=\"gostei\"/>-->\n  <!--<label for=\"gostei\">Gostei.</label>-->\n\n  <!--<input name=\"group1\" type=\"radio\" id=\"nao-gostei\"/>-->\n  <!--<label for=\"nao-gostei\">Não gostei.</label>-->\n  <!--</p>-->\n\n  <!--<div class=\"row\">-->\n  <!--<div class=\"input-field\">-->\n  <!--<input name=\"nome\" id=\"nome\" type=\"text\" class=\"validate\" name=\"nome\" required>-->\n  <!--<label for=\"nome\">Nome</label>-->\n  <!--</div>-->\n\n  <!--&lt;!&ndash;<div class=\"input-field col s6\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<input id=\"email\" type=\"email\" class=\"validate\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<label for=\"email\" data-error=\"Email inválido\" data-success=\"Certo\">Email</label>&ndash;&gt;-->\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  <!--</div>-->\n  <!--<div class=\"row\">-->\n  <!--<div class=\"input-field\">-->\n  <!--<input name=\"comentario\" id=\"comentario\" class=\"materialize-textarea\" name=\"comentario\" required>-->\n\n  <!--<label for=\"comentario\" >Comentário</label>-->\n  <!--</div>-->\n  <!--</div>-->\n\n\n  <!--</form>-->\n  <!--&lt;!&ndash;<div class=\"col s6\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<h1>Obrigado por fazer parte de nossa evolução</h1>&ndash;&gt;-->\n  <!--&lt;!&ndash;<a href=\"#\" class=\"brand-logo\"><img class=\"responsive-img z-depth-4\" src=\"img/logo-quadrado.png\" alt=\"\"></a>&ndash;&gt;-->\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  <!--</div>-->\n\n  <!--</div>-->\n  <!--<div class=\"modal-footer\">-->\n\n  <!--<button type=\"submit\" class=\"btn btn-primary modal-action modal-close\"> Enviar mensagem </button>-->\n\n  <!--</div>-->\n  <!--</div>-->\n\n  <div class=\"row s6 wow fadeIn centraliza-relativo\">\n\n\n\n\n\n    <form class=\"\"  id=\"form-dash\" #myForm=\"ngForm\" (ngSubmit)=\"addComentario(myForm)\">\n      <p>O que achou dos nossos novos dashboards?</p>\n      <div class=\"row\">\n        <input name=\"inputGostei\" checked type=\"radio\" id=\"gostei\"\n               ngModel\n               value=\"true\"\n        />\n        <label for=\"gostei\">Gostei.</label>\n\n        <input name=\"inputGostei\" type=\"radio\" id=\"nao-gostei\"\n               ngModel\n               value=\"false\"\n        />\n        <label for=\"nao-gostei\">Não gostei.</label>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"input-field\">\n          <input name=\"nome\"\n                 id=\"nome\"\n                 type=\"text\"\n                 class=\"\"\n                 required minlength=\"3\" maxlength=\"20\"\n                 ngModel\n          />\n\n\n\n          <label for=\"nome\">Nome</label>\n        </div>\n\n\n        <div class=\"input-field\">\n\n          <input name=\"comentario\"\n                 id=\"comentario\"\n                 type=\"text\"\n                 class=\"\"\n                 required\n                 ngModel\n          />\n          <label for=\"comentario\">Sugestão</label>\n\n        </div>\n\n\n        <div class=\"input-field\">\n          <input name=\"cc1\" type=\"hidden\" id=\"cc1\" class=\"\">\n          <!--<label for=\"cc1\" >Comentário</label>-->\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\"> Enviar sugestão </button>\n\n    </form>\n\n  </div>\n\n  <div class=\"col s6\">\n    <p> Total de sugestões: {{ indice }}</p>\n    <p> Gostaram: {{ indiceGostei }}</p>\n    <p> Não gostaram: {{ indiceNGostei }}</p>\n  </div>\n</section>\n\n\n<section id=\"6\">\n  <div class=\"row\">\n    <h1 class=\"center-align\">Obrigado por fazer parte da nossa evolução.</h1>\n\n    <div class=\"col s12 m8 offset-m2 l6 offset-l3 wow fadeIn \">\n      <div class=\"card-panel grey lighten-5 z-depth-1 hoverable wow fadeIn hoverable wow flipInX\" *ngFor=\"let message of messages\">\n        <div class=\"row valign-wrapper cent-coment \">\n          <div class=\"col s2 \">\n            <img src=\"img/man-talking.png\" alt=\"\" class=\"responsive-img\">\n            <p class=\"flow-text\">{{message.gostei}}</p>\n          </div>\n          <div class=\"col s10\">\n                      <span class=\"black-text\">\n                          <h6 class=\"blue-text text-darken-2\">{{message.userName}}</h6>\n\n                          <p class=\"blue-text text-darken-2\">{{ message.comentario }}</p>\n                        <!--<a (click)=\"onDelete()\">Delete</a>-->\n                      </span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<footer id=\"rodape\">\n  Desenvolvido por <a href=\"http://www.flashcourier.com.br\">Flash Courier 2017</a>\n</footer>\n\n\n\n"
 
 /***/ }),
 

@@ -7,4 +7,7 @@ export const environment = {
   production: true,
   api: 'http://localhost:3000',
   messageService: '/messages',
+  indice: '/indice',
+  indice1: '/indice1',
+  indice2: '/indice2'
 };
