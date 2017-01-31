@@ -2,7 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import { MessageService } from "./message/message.service";
 import { Message } from "./message/message.model";
 import {error} from "util";
-import {FormBuilder, Validators, NgForm, FormGroup, FormControl,} from "@angular/forms";
+import { FormBuilder, Validators, NgForm, FormGroup, FormControl } from "@angular/forms";
+
 
 
 
@@ -13,7 +14,7 @@ import {FormBuilder, Validators, NgForm, FormGroup, FormControl,} from "@angular
 })
 export class AppComponent implements OnInit{
 
-
+  //variaveis basicas
   messages: Message[] = [];
   indice: string;
   indiceGostei: string;
@@ -22,16 +23,40 @@ export class AppComponent implements OnInit{
   userName: string;
   comentario: string;
 
+  //gráfico
+
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+
+  public barChartLabels:string[] = ['Deshboard'];
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = true;
+  public barChartData:any [] =[
+      {data: [65], label: 'Gostei'},
+      {data: [28], label: 'Não Gostei'}
+      ];
+
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+
+
+
+
+
   formG: FormGroup;
 
 
   constructor(private messageService: MessageService,
               private _fb: FormBuilder){
 
-      this.formG = this._fb.group({
-
-
-      });
 
   }
 
@@ -85,4 +110,18 @@ export class AppComponent implements OnInit{
 
   }
 
+  getGrafico():void {
+    // Only Change 3 values
+    let data = [
+      Math.round(Math.random() * 100),
+      59,
+      80,
+      (Math.random() * 100),
+      56,
+      (Math.random() * 100),
+      40];
+    let clone = JSON.parse(JSON.stringify(this.barChartData));
+    clone[0].data = data;
+    this.barChartData = clone;
+  }
 }

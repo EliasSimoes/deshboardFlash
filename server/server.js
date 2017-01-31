@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Point static path to dist
 app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../node_modules')));
 console.log(path.join(__dirname,'/public' ));
 console.log(path.join(__dirname,'../dist' ));
 

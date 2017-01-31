@@ -18,20 +18,6 @@ export class MessageService{
 
     constructor(private http: Http){}
 
-    addMessage(message: Message){
-
-        const body = JSON.stringify(message);
-        const headers = new Headers ({'Content-Type': 'application/json'});
-
-        return this.http.post(environment.api + environment.messageService, body, {headers: headers})
-            .map((response:Response) => {
-                const result = response.json();
-                const message = new Message(result.obj.gostei, result.obj.userName, result.obj.comentario);
-                this.messages.push(message);
-
-                return message
-            })
-    }
 
     //relação das sugestoes
     getIndice(){
