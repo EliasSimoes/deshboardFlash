@@ -41,3 +41,4 @@ Thumbs.db
 /node_modules/
 !/dist/
 !/node_modules/chart.js/
+/node_modules/chart.js/
