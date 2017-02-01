@@ -80,34 +80,6 @@ nav a {
 }
 
 
-/*!* label color *!*/
-/*.input-field label {*/
-  /*color: #fff;*/
-/*}*/
-/*!* label focus color *!*/
-/*.input-field input[type=text]:focus + label {*/
-  /*color: #fff !important;*/
-/*}*/
-/*!* label underline focus color *!*/
-/*.input-field input[type=text]:focus {*/
-  /*border-bottom: 1px solid #fff !important;*/
-  /*box-shadow: 0 1px 0 0 #fff !important;*/
-/*}*/
-/*!* valid color *!*/
-/*.input-field input[type=text].valid {*/
-  /*border-bottom: 1px solid #fff !important;*/
-  /*box-shadow: 0 1px 0 0 #fff !important;*/
-/*}*/
-/*!* invalid color *!*/
-/*.input-field input[type=text].invalid {*/
-  /*border-bottom: 1px solid #ffffff !important;*/
-  /*box-shadow: 0 1px 0 0 #fff !important;*/
-/*}*/
-/*!* icon prefix focus color *!*/
-/*.input-field .prefix.active {*/
-  /*color: #fff !important;*/
-/*}*/
-
 [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
   border: 2px solid #fff;
 }
@@ -232,4 +204,12 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   -o-transform: translateX(50px);
   -ms-transform: translateX(50px);
   transform: translateX(-50%);
+}
+
+.card-PaddingResetTop{
+  padding-top: 0 !important;
+}
+
+.card-PaddingResetBottom{
+  padding-bottom: 0 !important;
 }
