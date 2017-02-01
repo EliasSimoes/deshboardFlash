@@ -33,62 +33,7 @@
 
 <section id="5">
 
-  <!--<a class="waves-effect waves-light btn centraliza-relativo hoverable" href="#modal1">Alguma sugestão?</a>-->
-
-  <!--<div id="modal1" class="modal  modal-fixed-footer">-->
-  <!--<div class="modal-content">-->
-
-  <!--<div class="row s6 wow fadeIn" id="centraliza-relativo">-->
-  <!--<form class="" id="form-dash" (ngSubmit)="onAddMessage()">-->
-  <!--<p>O que achou dos nossos novos dashboards?</p>-->
-  <!--<p>-->
-  <!--<input name="group1" type="radio" id="gostei"/>-->
-  <!--<label for="gostei">Gostei.</label>-->
-
-  <!--<input name="group1" type="radio" id="nao-gostei"/>-->
-  <!--<label for="nao-gostei">Não gostei.</label>-->
-  <!--</p>-->
-
-  <!--<div class="row">-->
-  <!--<div class="input-field">-->
-  <!--<input name="nome" id="nome" type="text" class="validate" name="nome" required>-->
-  <!--<label for="nome">Nome</label>-->
-  <!--</div>-->
-
-  <!--&lt;!&ndash;<div class="input-field col s6">&ndash;&gt;-->
-  <!--&lt;!&ndash;<input id="email" type="email" class="validate">&ndash;&gt;-->
-  <!--&lt;!&ndash;<label for="email" data-error="Email inválido" data-success="Certo">Email</label>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--</div>-->
-  <!--<div class="row">-->
-  <!--<div class="input-field">-->
-  <!--<input name="comentario" id="comentario" class="materialize-textarea" name="comentario" required>-->
-
-  <!--<label for="comentario" >Comentário</label>-->
-  <!--</div>-->
-  <!--</div>-->
-
-
-  <!--</form>-->
-  <!--&lt;!&ndash;<div class="col s6">&ndash;&gt;-->
-  <!--&lt;!&ndash;<h1>Obrigado por fazer parte de nossa evolução</h1>&ndash;&gt;-->
-  <!--&lt;!&ndash;<a href="#" class="brand-logo"><img class="responsive-img z-depth-4" src="img/logo-quadrado.png" alt=""></a>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--</div>-->
-
-  <!--</div>-->
-  <!--<div class="modal-footer">-->
-
-  <!--<button type="submit" class="btn btn-primary modal-action modal-close"> Enviar mensagem </button>-->
-
-  <!--</div>-->
-  <!--</div>-->
-
   <div class="row s6 wow fadeIn centraliza-relativo">
-
-
-
-
 
     <form class=""  id="form-dash" #myForm="ngForm" (ngSubmit)="addComentario(myForm)">
       <p>O que achou dos nossos novos dashboards?</p>
@@ -115,12 +60,8 @@
                  required minlength="3" maxlength="20"
                  ngModel
           />
-
-
-
           <label for="nome">Nome</label>
         </div>
-
 
         <div class="input-field">
 
@@ -147,49 +88,65 @@
 
   </div>
 
-  <div class="col s6">
-    <p> Total de sugestões: {{ indice }}</p>
-    <p> Gostaram: {{ indiceGostei }}</p>
-    <p> Não gostaram: {{ indiceNGostei }}</p>
+  <!-- Modal Trigger -->
+    <!--<div class="btn-modal">-->
+        <!--<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Resumo</a>-->
+    <!--</div>-->
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <div class="">
 
-    <div>
-      <div style="display: block">
-        <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
-                [options]="barChartOptions"
-                [legend]="barChartLegend"
-                [chartType]="barChartType"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)">
+        <div>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
 
-        </canvas>
+            </canvas>
+          </div>
+
+        </div>
+        <p> Total de sugestões: {{ indice }} Gostaram: {{ indiceGostei }} Não gostaram: {{ indiceNGostei }}</p>
       </div>
-      <button (click)="getGrafico()">Update</button>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-flat" (click)="getGrafico()">Atualizar</button>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Fechar</a>
     </div>
   </div>
+
+
+
 </section>
 
 
 <section id="6">
   <div class="row">
     <h1 class="center-align">Obrigado por fazer parte da nossa evolução.</h1>
-
+    <div class="divider"></div>
     <div class="col s12 m8 offset-m2 l6 offset-l3 wow fadeIn ">
-      <div class="card-panel grey lighten-5 z-depth-1 hoverable wow fadeIn hoverable wow flipInX" *ngFor="let message of messages">
-        <div class="row valign-wrapper cent-coment ">
-          <div class="col s2 ">
-            <img src="img/man-talking.png" alt="" class="responsive-img">
-            <p class="flow-text">{{message.gostei}}</p>
-          </div>
-          <div class="col s10">
-                      <span class="black-text">
-                          <h6 class="blue-text text-darken-2">{{message.userName}}</h6>
+      <div class="card horizontal grey lighten-5 z-depth-1 cent-coment hoverable wow flipInX" *ngFor="let message of messages">
+        <div class="card-image">
+          <img src="img/man-talking.png" alt="" class="responsive-img">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p class="blue-text text-darken-2">{{ message.userName }}</p>
 
-                          <p class="blue-text text-darken-2">{{ message.comentario }}</p>
-                        <!--<a (click)="onDelete()">Delete</a>-->
-                      </span>
+            <h6 class="blue-text text-darken-2">{{ message.comentario }}</h6>
+            <!--<a (click)="onDelete()">Delete</a>-->
           </div>
+          <div class="card-action">
+            <p>{{ message.gostei }}</p>
+          </div>
+
+
         </div>
       </div>
     </div>

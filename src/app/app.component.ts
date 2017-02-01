@@ -16,9 +16,6 @@ export class AppComponent implements OnInit{
 
   //variaveis basicas
   messages: Message[] = [];
-  indice: string;
-  indiceGostei: string;
-  indiceNGostei: string;
   gostei: string;
   userName: string;
   comentario: string;
@@ -30,13 +27,30 @@ export class AppComponent implements OnInit{
     responsive: true
   };
 
+  indice  = this.messageService.getIndice()
+        .subscribe(
+            data => this.indice = data,
+            error => console.log(error)
+        );
+  indiceGostei = this.messageService.getGostei()
+        .subscribe(
+            data => this.indiceGostei = data,
+            error => console.log(error)
+        );
+  indiceNGostei =this.messageService.getNGostei()
+        .subscribe(
+            data => this.indiceNGostei = data,
+            error => console.log(error)
+        );
+
   public barChartLabels:string[] = ['Deshboard'];
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
-  public barChartData:any [] =[
-      {data: [65], label: 'Gostei'},
-      {data: [28], label: 'Não Gostei'}
-      ];
+    public barChartData:any[] = [
+        {data: [this.indiceNGostei], label: 'Não Gostei'},
+        {data: [this.indiceGostei], label: 'Gostei'},
+        {data: [this.indice], label: 'Total'}
+    ];
 
   // events
   public chartClicked(e:any):void {
@@ -81,6 +95,7 @@ export class AppComponent implements OnInit{
             messages => this.messages = messages,
             error => console.error(error)
         )
+
   }
 
 
@@ -111,17 +126,15 @@ export class AppComponent implements OnInit{
   }
 
   getGrafico():void {
-    // Only Change 3 values
+
     let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
+        {data: [this.indiceNGostei], label: 'Não Gostei'},
+        {data: [this.indiceGostei], label: 'Gostei'},
+        {data: [this.indice], label: 'Total'}
+        ];
+
+    this.barChartData = data;
+
+      alert(this.barChartData);
   }
 }

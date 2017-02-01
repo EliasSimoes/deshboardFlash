@@ -53,6 +53,7 @@
                  message: 'Erro ao trazer o dado do banco!!!'
              });
          }
+         console.log(count);
          res.status(200).json({
              data: count
          });

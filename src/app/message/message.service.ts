@@ -10,9 +10,9 @@ import { environment } from "../../environments/environment";
 export class MessageService{
 
     private messages: Message[] = [];
-    private indice:           string;
-    private indiceGostei:     string;
-    private indiceNGostei:    string;
+    private indice:           number;
+    private indiceGostei:     number;
+    private indiceNGostei:    number;
 
     messageIsEdit = new EventEmitter<Message>();
 
@@ -27,6 +27,7 @@ export class MessageService{
             .map((response:Response) => {
 
             const indice = response.json().data;
+                console.log(indice);
                 return indice;
             })
     }
@@ -38,6 +39,7 @@ export class MessageService{
             .map((response:Response) => {
 
                 const indiceGostei = response.json().data;
+                console.log(indiceGostei);
                 return indiceGostei;
             })
     }
@@ -49,6 +51,7 @@ export class MessageService{
             .map((response:Response) => {
 
                 const indiceNGostei = response.json().data;
+                console.log(indiceNGostei);
                 return indiceNGostei;
             })
     }

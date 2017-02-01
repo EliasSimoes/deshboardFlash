@@ -220,3 +220,16 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 .z-indexMob{
   z-index: 99999999999999999;
 }
+
+.btn-modal{
+  position: absolute;
+  bottom: -20px;
+  left:50%;
+  z-index: 9;
+
+  -moz-transform: translateX(50px);
+  -webkit-transform: translateX(50px);
+  -o-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(-50%);
+}
