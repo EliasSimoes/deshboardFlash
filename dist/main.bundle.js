@@ -13,32 +13,11 @@ var Message = (function () {
     }
     return Message;
 }());
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/message.model.js.map
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/message.model.js.map
 
 /***/ }),
 
-/***/ 335:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `angular-cli.json`.
-var environment = {
-    production: true,
-    api: 'http://localhost:3000',
-    messageService: '/messages',
-    indice: '/indice',
-    indice1: '/indice1',
-    indice2: '/indice2'
-};
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/environment.js.map
-
-/***/ }),
-
-/***/ 403:
+/***/ 402:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -47,21 +26,21 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 403;
+webpackEmptyContext.id = 402;
 
 
 /***/ }),
 
-/***/ 404:
+/***/ 403:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(488);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(509);
 
 
 
@@ -71,16 +50,16 @@ if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_4__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/main.js.map
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/main.js.map
 
 /***/ }),
 
-/***/ 509:
+/***/ 508:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__message_message_service__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__message_message_service__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_message_model__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(309);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
@@ -180,19 +159,19 @@ var AppComponent = (function () {
     return AppComponent;
     var _a, _b;
 }());
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/app.component.js.map
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/app.component.js.map
 
 /***/ }),
 
-/***/ 510:
+/***/ 509:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(309);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(508);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_charts__ = __webpack_require__(665);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_charts__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -232,11 +211,11 @@ var AppModule = (function () {
     ], AppModule);
     return AppModule;
 }());
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/app.module.js.map
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/app.module.js.map
 
 /***/ }),
 
-/***/ 511:
+/***/ 510:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -245,7 +224,6 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_model__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(669);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__(335);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -260,7 +238,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var MessageService = (function () {
     function MessageService(http) {
         this.http = http;
@@ -269,8 +246,7 @@ var MessageService = (function () {
     }
     //relação das sugestoes
     MessageService.prototype.getIndice = function () {
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
-        return this.http.get('http://localhost:3000/messages/indice')
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
             .map(function (response) {
             var indice = response.json().data;
             console.log(indice);
@@ -278,8 +254,7 @@ var MessageService = (function () {
         });
     };
     MessageService.prototype.getGostei = function () {
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
-        return this.http.get('http://localhost:3000/messages/indice1')
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice1')
             .map(function (response) {
             var indiceGostei = response.json().data;
             console.log(indiceGostei);
@@ -287,8 +262,7 @@ var MessageService = (function () {
         });
     };
     MessageService.prototype.getNGostei = function () {
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
-        return this.http.get('http://localhost:3000/messages/indice2')
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice2')
             .map(function (response) {
             var indiceNGostei = response.json().data;
             console.log(indiceNGostei);
@@ -298,8 +272,7 @@ var MessageService = (function () {
     //métodos do form principal
     MessageService.prototype.getMessages = function () {
         var _this = this;
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api + __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].messageService)
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages')
             .map(function (response) {
             var messages = response.json().data;
             var transformedMessages = [];
@@ -316,8 +289,8 @@ var MessageService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({
             'Content-Type': 'application/json'
         });
-        //return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api + __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].messageService, body, { headers: headers });
+        return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, { headers: headers });
+        //return this.http.post(environment.api + environment.messageService, body, {headers: headers});
     };
     MessageService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
@@ -326,7 +299,28 @@ var MessageService = (function () {
     return MessageService;
     var _a;
 }());
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/message.service.js.map
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/message.service.js.map
+
+/***/ }),
+
+/***/ 511:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `angular-cli.json`.
+var environment = {
+    production: true,
+    api: 'http://localhost:3000',
+    messageService: '/messages',
+    indice: '/indice',
+    indice1: '/indice1',
+    indice2: '/indice2'
+};
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/environment.js.map
 
 /***/ }),
 
@@ -382,7 +376,7 @@ var MessageService = (function () {
 
 
 
-//# sourceMappingURL=/github/DEBUGDESHBOARD/deshboardFlash/src/polyfills.js.map
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/polyfills.js.map
 
 /***/ }),
 
@@ -396,7 +390,7 @@ module.exports = "<section class=\"intro\" id=\"1\">\n  <div class=\"content\">\
 /***/ 942:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(404);
+module.exports = __webpack_require__(403);
 
 
 /***/ })
