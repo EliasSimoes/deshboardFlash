@@ -88,40 +88,7 @@
 
   </div>
 
-  <!-- Modal Trigger -->
-    <!--<div class="btn-modal">-->
-        <!--<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Resumo</a>-->
-    <!--</div>-->
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <div class="">
-
-        <div>
-          <div style="display: block">
-            <canvas baseChart
-                    [datasets]="barChartData"
-                    [labels]="barChartLabels"
-                    [options]="barChartOptions"
-                    [legend]="barChartLegend"
-                    [chartType]="barChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)">
-
-            </canvas>
-          </div>
-
-        </div>
-        <p> Total de sugestões: {{ indice }} Gostaram: {{ indiceGostei }} Não gostaram: {{ indiceNGostei }}</p>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-flat" (click)="getGrafico()">Atualizar</button>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Fechar</a>
-    </div>
-  </div>
-
-
+  <app-charts>Loading...</app-charts>
 
 </section>
 

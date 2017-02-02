@@ -1,0 +1,50 @@
+<form class=""  id="form-dash" #myForm="ngForm" (ngSubmit)="addComentario(myForm)">
+  <p>O que achou dos nossos novos dashboards?</p>
+  <div class="row">
+    <input name="inputGostei" checked type="radio" id="gostei"
+           ngModel
+           value="true"
+    />
+    <label for="gostei">Gostei.</label>
+
+    <input name="inputGostei" type="radio" id="nao-gostei"
+           ngModel
+           value="false"
+    />
+    <label for="nao-gostei">Não gostei.</label>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <input name="nome"
+             id="nome"
+             type="text"
+             class=""
+             required minlength="3" maxlength="20"
+             ngModel
+      />
+      <label for="nome">Nome</label>
+    </div>
+
+    <div class="input-field">
+
+      <input name="comentario"
+             id="comentario"
+             type="text"
+             class=""
+             required
+             ngModel
+      />
+      <label for="comentario">Sugestão</label>
+
+    </div>
+
+
+    <div class="input-field">
+      <input name="cc1" type="hidden" id="cc1" class="">
+      <!--<label for="cc1" >Comentário</label>-->
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary"> Enviar sugestão </button>
+
+</form>
