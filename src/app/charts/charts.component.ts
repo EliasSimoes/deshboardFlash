@@ -76,7 +76,7 @@ export class ChartsComponent implements OnInit {
     clone[2].data = data;
       this.barChartData = clone;
       console.log(this.barChartData);
-    alert(this.barChartData);
+    //alert(this.barChartData);
 
   }
 }

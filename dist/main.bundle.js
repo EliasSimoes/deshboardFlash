@@ -333,7 +333,7 @@ var ChartsComponent = (function () {
         clone[2].data = data;
         this.barChartData = clone;
         console.log(this.barChartData);
-        alert(this.barChartData);
+        //alert(this.barChartData);
     };
     ChartsComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
