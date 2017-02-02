@@ -67,13 +67,12 @@ export class ChartsComponent implements OnInit {
 
 
     let data = [
-      (this.indiceNGostei),
-      (this.indiceGostei),
-      (this.indice)
+      this.indiceNGostei,
+      this.indiceGostei,
+      this.indice
     ];
 
-    let clone;
-    clone = JSON.parse(JSON.stringify(this.barChartData));
+    let clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[2].data = data;
       this.barChartData = clone;
       console.log(this.barChartData);

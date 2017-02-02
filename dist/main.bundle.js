@@ -26,7 +26,6 @@ var Message = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_model__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(675);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__(336);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +40,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var MessageService = (function () {
     function MessageService(http) {
         this.http = http;
@@ -50,8 +48,7 @@ var MessageService = (function () {
     }
     //relação das sugestoes
     MessageService.prototype.getIndice = function () {
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
-        return this.http.get('http://localhost:3000/messages/indice')
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
             .map(function (response) {
             var indice = response.json().data;
             console.log(indice);
@@ -59,8 +56,7 @@ var MessageService = (function () {
         });
     };
     MessageService.prototype.getGostei = function () {
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice1')
-        return this.http.get('http://localhost:3000/messages/indice1')
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice1')
             .map(function (response) {
             var indiceGostei = response.json().data;
             console.log(indiceGostei);
@@ -68,8 +64,7 @@ var MessageService = (function () {
         });
     };
     MessageService.prototype.getNGostei = function () {
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice2')
-        return this.http.get('http://localhost:3000/messages/indice2')
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice2')
             .map(function (response) {
             var indiceNGostei = response.json().data;
             console.log(indiceNGostei);
@@ -79,8 +74,7 @@ var MessageService = (function () {
     //métodos do form principal
     MessageService.prototype.getMessages = function () {
         var _this = this;
-        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api + __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].messageService)
+        return this.http.get('https://flash-deshboard.herokuapp.com/messages')
             .map(function (response) {
             var messages = response.json().data;
             var transformedMessages = [];
@@ -97,8 +91,8 @@ var MessageService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({
             'Content-Type': 'application/json'
         });
-        //return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api + __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].messageService, body, { headers: headers });
+        return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, { headers: headers });
+        //return this.http.post(environment.api + environment.messageService, body, {headers: headers});
     };
     MessageService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
@@ -111,28 +105,7 @@ var MessageService = (function () {
 
 /***/ }),
 
-/***/ 336:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `angular-cli.json`.
-var environment = {
-    production: true,
-    api: 'http://localhost:3000',
-    messageService: '/messages',
-    indice: '/indice',
-    indice1: '/indice1',
-    indice2: '/indice2'
-};
-//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/environment.js.map
-
-/***/ }),
-
-/***/ 404:
+/***/ 403:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -141,21 +114,21 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 404;
+webpackEmptyContext.id = 403;
 
 
 /***/ }),
 
-/***/ 405:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(490);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(489);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(510);
 
 
 
@@ -169,7 +142,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 510:
+/***/ 509:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -242,7 +215,7 @@ var AppComponent = (function () {
 
 /***/ }),
 
-/***/ 511:
+/***/ 510:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -250,11 +223,11 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_charts__ = __webpack_require__(667);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_charts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__charts_charts_component__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__forms_forms_component__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__charts_charts_component__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__forms_forms_component__ = __webpack_require__(512);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -300,7 +273,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 512:
+/***/ 511:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -352,12 +325,11 @@ var ChartsComponent = (function () {
     };
     ChartsComponent.prototype.getGrafico = function () {
         var data = [
-            (this.indiceNGostei),
-            (this.indiceGostei),
-            (this.indice)
+            this.indiceNGostei,
+            this.indiceGostei,
+            this.indice
         ];
-        var clone;
-        clone = JSON.parse(JSON.stringify(this.barChartData));
+        var clone = JSON.parse(JSON.stringify(this.barChartData));
         clone[2].data = data;
         this.barChartData = clone;
         console.log(this.barChartData);
@@ -378,7 +350,7 @@ var ChartsComponent = (function () {
 
 /***/ }),
 
-/***/ 513:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -436,6 +408,27 @@ var FormsComponent = (function () {
     var _a;
 }());
 //# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/forms.component.js.map
+
+/***/ }),
+
+/***/ 513:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `angular-cli.json`.
+var environment = {
+    production: true,
+    api: 'http://localhost:3000',
+    messageService: '/messages',
+    indice: '/indice',
+    indice1: '/indice1',
+    indice2: '/indice2'
+};
+//# sourceMappingURL=/Users/pablojuan/Documents/bkp/deshboardFlash/src/environment.js.map
 
 /***/ }),
 
@@ -533,7 +526,7 @@ module.exports = "<form class=\"\"  id=\"form-dash\" #myForm=\"ngForm\" (ngSubmi
 /***/ 948:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(405);
+module.exports = __webpack_require__(404);
 
 
 /***/ })
