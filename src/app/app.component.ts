@@ -79,11 +79,11 @@ export class AppComponent implements OnInit{
     form.reset();
   }
 
-  deleteMessage(){
-      this.messageService.deleteMessage(this.message)
-          .subscribe(
-              result => console.log(result)
-          );
-  }
+  // deleteMessage(){
+  //     this.messageService.deleteMessage(this.message)
+  //         .subscribe(
+  //             result => console.log(result)
+  //         );
+  // }
 
 }
