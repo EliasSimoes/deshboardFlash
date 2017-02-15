@@ -21,8 +21,8 @@ export class MessageService{
 
     //relação das sugestoes
     getIndice(){
-        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
-        //return this.http.get('http://localhost:3000/messages/indice')
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice')
+        return this.http.get('http://localhost:3000/messages/indice')
         //return this.http.get(environment.api + environment.messageService + environment.indice)
             .map((response:Response) => {
 
@@ -33,8 +33,8 @@ export class MessageService{
     }
 
     getGostei(){
-        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice1')
-        //return this.http.get('http://localhost:3000/messages/indice1')
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice1')
+        return this.http.get('http://localhost:3000/messages/indice1')
         //return this.http.get(environment.api + environment.messageService + environment.indice1)
             .map((response:Response) => {
 
@@ -45,8 +45,8 @@ export class MessageService{
     }
 
     getNGostei(){
-        return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice2')
-        //return this.http.get('http://localhost:3000/messages/indice2')
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages/indice2')
+        return this.http.get('http://localhost:3000/messages/indice2')
         //return this.http.get(environment.api + environment.messageService + environment.indice2)
             .map((response:Response) => {
 
@@ -60,8 +60,8 @@ export class MessageService{
 
     //métodos do form principal
     getMessages(){
-        return this.http.get('https://flash-deshboard.herokuapp.com/messages')
-        //return this.http.get(environment.api + environment.messageService)
+        //return this.http.get('https://flash-deshboard.herokuapp.com/messages')
+        return this.http.get(environment.api + environment.messageService)
             .map((response:Response) => {
 
                 const messages = response.json().data;
@@ -82,8 +82,17 @@ export class MessageService{
         const headers = new Headers({
             'Content-Type': 'application/json'
         });
-        return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
-        //return this.http.post(environment.api + environment.messageService, body, {headers: headers});
+        //return this.http.post('https://flash-deshboard.herokuapp.com/messages', body, {headers: headers});
+        return this.http.post(environment.api + environment.messageService, body, {headers: headers});
 
+    }
+
+    deleteMessage(message: Message){
+        this.messages.splice(this.messages.indexOf(message), 1);
+        return this.http.delete('http://localhost:3000/messages/:id')
+            .map((response:Response) => response.json())
+            .catch((error:Response) => {
+                return Observable.throw(error.json());
+            });
     }
 }

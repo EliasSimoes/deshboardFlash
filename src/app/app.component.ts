@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { MessageService } from "./message/message.service";
 import { Message } from "./message/message.model";
 import {error} from "util";
@@ -14,11 +14,13 @@ import { ChartsComponent } from './charts/charts.component';
 })
 export class AppComponent implements OnInit{
 
+  @Input() message: Message;
   //variaveis basicas
   messages: Message[] = [];
   gostei: string;
   userName: string;
   comentario: string;
+
 
   indice ;
   indiceGostei ;
@@ -77,8 +79,11 @@ export class AppComponent implements OnInit{
     form.reset();
   }
 
-  onClick(){
-
+  deleteMessage(){
+      this.messageService.deleteMessage(this.message)
+          .subscribe(
+              result => console.log(result)
+          );
   }
 
 }
