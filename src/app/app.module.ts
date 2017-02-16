@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { ChartsModule } from "ng2-charts";
 import { ChartsComponent } from './charts/charts.component';
 import { FormsComponent } from './forms/forms.component';
+import { ChartBarEstadoComponent } from './chart-bar-estado/chart-bar-estado.component';
+import { ChartMistoComponent } from './chart-misto/chart-misto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartsComponent,
-    FormsComponent
+    FormsComponent,
+    ChartBarEstadoComponent,
+    ChartMistoComponent
   ],
   imports: [
     BrowserModule,

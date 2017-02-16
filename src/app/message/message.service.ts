@@ -89,7 +89,9 @@ export class MessageService{
 
     // deleteMessage(message: Message){
     //     this.messages.splice(this.messages.indexOf(message), 1);
-    //     return this.http.delete('http://localhost:3000/messages/:id')
+    //     console.log(message.mensagemId);
+    //     //return this.http.delete('http://localhost:3000/messages/' + message.mensagemId)
+    //     return this.http.delete('https://flash-deshboard.herokuapp.com/messages/' + message.mensagemId)
     //         .map((response:Response) => response.json())
     //         .catch((error:Response) => {
     //             return Observable.throw(error.json());

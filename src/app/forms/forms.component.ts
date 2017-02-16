@@ -11,6 +11,8 @@ import { MessageService } from "../message/message.service";
 })
 export class FormsComponent implements OnInit {
   messages: Message[] =[];
+
+  mensagemId: string;
   gostei: string;
   userName: string;
   comentario: string;

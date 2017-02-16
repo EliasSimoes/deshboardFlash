@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   @Input() message: Message;
   //variaveis basicas
   messages: Message[] = [];
+  mensagemID: string;
   gostei: string;
   userName: string;
   comentario: string;
@@ -79,7 +80,10 @@ export class AppComponent implements OnInit{
     form.reset();
   }
 
+
+
   // deleteMessage(){
+  //
   //     this.messageService.deleteMessage(this.message)
   //         .subscribe(
   //             result => console.log(result)

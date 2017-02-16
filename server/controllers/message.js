@@ -26,7 +26,8 @@
              });
          }
          res.status(201).json({
-             message: 'Mensagem salva com sucesso!'
+             message: 'Mensagem salva com sucesso!',
+             obj: result
          });
      });
  };
@@ -90,7 +91,7 @@
             });
         }
 
-        message.content = req.body.content;
+
         message.remove(function (err, result) {
            if(err){
                return res.status(500).json({
